@@ -1,0 +1,32 @@
+@include font(Libre Franklin, LibreFranklin/LibreFranklin-Regular, 400, normal)
+@include font(Libre Franklin, LibreFranklin/LibreFranklin-Medium, 500, normal)
+@include font(Libre Franklin, LibreFranklin/LibreFranklin-SemiBold, 600, normal)
+@include font(Libre Franklin, LibreFranklin/LibreFranklin-Bold, 700, normal)
+@include font(Bunya Personal, BunyaPersonal/BunyaPERSONAL-Light, 400, normal)
+
+body
+  font-family: Libre Franklin, sans-serif
+  font-weight: 400
+  color: $greyDark
+  position: relative
+  background-color: $white
+  &.overflow-on
+    overflow-y: hidden
+
+.container
+  width: get-vw(1180px)
+  margin: 0 auto
+  @include mobile
+    width: 90%
+
+main
+  overflow-x: hidden
+
+.only
+  &-desktop
+    @include mobile
+      display: none
+  &-mobile
+    display: none
+    @include mobile
+      display: block

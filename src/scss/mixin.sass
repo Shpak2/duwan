@@ -1,0 +1,51 @@
+@mixin font($font_name, $file_name, $weight, $style)
+  @font-face
+    font-family: ''+$font_name+''
+    font-display: swap
+    src: url("../fonts/$file_name.eot")
+    src: url('../fonts/'+$file_name+'?#iefix') format('embedded-opentype'), url("../fonts/"+$file_name+".woff") format("woff"),url('../fonts/'+$file_name+'.ttf') format('truetype')
+    font-weight: $weight
+    font-style: $style
+
+$vw-viewport: 1920
+$vw-viewport-tablet: 768
+$vw-viewport-mobile: 360
+
+@function get-vw($target)
+  $vw-context: ($vw-viewport * .01) * 1px
+  @return ($target/$vw-context) * 1vw
+
+@function get-vw-tablet($target)
+  $vw-context: ($vw-viewport-tablet * .01) * 1px
+  @return ($target/$vw-context) * 1vw
+
+@function get-vw-mobile($target)
+  $vw-context: ($vw-viewport-mobile * .01) * 1px
+  @return ($target/$vw-context) * 1vmin
+
+@mixin tabAndLess
+  @media (max-width: 1024px) and (orientation: portrait), (max-width: 1023px)
+    @content
+
+@mixin mobile
+  @media (max-width: (500px)), (max-height: 500px) and (orientation: landscape)
+    @content
+
+@mixin mobileLandscape
+  @media  (max-height: 500px) and (orientation: landscape)
+    @content
+
+@mixin tabLandscape
+  @media (max-height: 500px) and (orientation: landscape)
+    @content
+
+$black: #000000
+$white: #ffffff
+$greyLight: #CCCCCC
+$greyLight1: #E5E5E5
+$greyLight2: #999999
+$greyDark: #443E3E
+
+// transition
+$cubic1: 1s cubic-bezier(.5,.12,.46,.88)
+

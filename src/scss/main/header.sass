@@ -1,0 +1,303 @@
+.header
+  height: get-vw(102px)
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  box-shadow: 0px get-vw(4px) get-vw(33px) rgba(0, 0, 0, 0.05)
+  background-color: $white
+  position: relative
+  z-index: 10
+  @include mobile
+    height: get-vw-mobile(84px)
+    z-index: 100
+  & .container.d-flex
+    @include mobile
+      justify-content: space-between
+  &-logo
+    width: get-vw(89px)
+    @include mobile
+      width: get-vw-mobile(63px)
+  &-menu__wrapper
+    margin-left: auto
+    @include mobile
+      margin-left: unset
+      margin-top: get-vw-mobile(50px)
+      width: 100%
+  &-menu
+    display: flex
+    margin-right: get-vw(40px)
+    @include mobile
+      margin-right: unset
+      flex-wrap: wrap
+    & .menu-item
+      text-transform: uppercase
+      font-size: get-vw(15px)
+      @include mobile
+        width: 100%
+        font-size: get-vw-mobile(19px)
+        margin-bottom: get-vw-mobile(50px)
+        transform: translateX(get-vw-mobile(-150px))
+        transition: .5s cubic-bezier(.5,.12,.46,.88)
+        opacity: 0
+      & a
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          bottom: get-vw(-3px)
+          right: 100%
+          width: get-vw(10px)
+          height: get-vw(1px)
+          background: $greyDark
+          opacity: 0
+          transition: all .2s ease, right 0s ease .2s
+        &:hover
+          @media (hover:hover)
+            text-shadow: 0 0 get-vw(1px) $greyDark, 0 0 get-vw(1px) $greyDark
+            &::before
+              right: 0
+              opacity: 1
+              width: 100%
+              transition: right .2s ease, width .2s ease .2s
+      &:not(:last-child)
+        &::after
+          content: '/'
+          margin: 0 get-vw(25px)
+          @include mobile
+            content: none
+  &-right__menu
+    @include mobile
+      width: 100%
+      transform: translateX(get-vw-mobile(-150px))
+      transition: .5s cubic-bezier(.5,.12,.46,.88)
+      opacity: 0
+    & ul
+      display: flex
+      align-items: center
+      & li
+        & div
+          &.btn-cart
+            & span
+              width: get-vw(20px)
+              display: block
+              cursor: pointer
+              @include mobile
+                width: get-vw-mobile(16px)
+            & i
+              font-style: normal
+              line-height: 1.2
+              font-size: get-vw(12px)
+              margin-left: get-vw(10px)
+              color: $white
+              background-color: $black
+              width: get-vw(20px)
+              height: get-vw(20px)
+              display: flex
+              justify-content: center
+              align-items: center
+              border-radius: 50%
+              @include mobile
+                width: get-vw-mobile(20px)
+                height: get-vw-mobile(20px)
+                font-size: get-vw-mobile(12px)
+                margin-left: get-vw-mobile(10px)
+                background-color: rgba(153, 153, 153,.45)
+                transform: translateY(-10%)
+          &#search
+            position: relative
+            & span
+              width: get-vw(16px)
+              display: block
+              cursor: pointer
+              @include mobile
+                width: get-vw-mobile(16px)
+          &:hover
+            @media (hover: hover)
+              & svg
+                & path
+                  fill: $greyDark
+        &:not(:last-child)
+          margin-right: get-vw(20px)
+          @include mobile
+            margin-right: get-vw-mobile(20px)
+
+$b: .3s
+$delay: 0.1s
+
+@for $i from 1 through 20
+  .show-menu .header-menu .menu-item:nth-child(#{$i})
+    @include mobile
+      transition-delay: $b
+      $b: $b + $delay
+
+.menu-wrap
+  display: flex
+  align-items: center
+  margin-left: auto
+  @include mobile
+    position: absolute
+    top: 0
+    width: 100%
+    height: 100vh
+    left: 0
+    transition: .4s ease-in-out
+    transform: translateX(-100%)
+    background: $black
+    align-items: unset
+    display: block
+    padding: get-vw-mobile(84px) 5%
+    color: $white
+    min-height: fit-content
+    overflow-y: scroll
+    overflow-x: hidden
+
+.btn-cart
+  display: flex
+
+.d-flex
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+
+.dropdown-search
+  opacity: 0
+  position: absolute
+  top: 50%
+  right: 0
+  background: $white
+  transform: translateY(-50%)
+  overflow: hidden
+  // height: 0
+  transition: .4s ease-in-out
+  @include mobile
+    right: unset
+    left: 0%
+    background: $black
+    z-index: 100
+    // overflow: unset
+    pointer-events: none
+  &.show
+    animation: show .4s ease-in forwards
+    display: block
+    @include mobile
+      animation: showMob .4s ease-in forwards
+      pointer-events: all
+  & form
+    // margin: get-vw(20px) get-vw(30px)
+    display: flex
+    width: 100%
+    @include mobile
+      flex-direction: row-reverse
+    & .form-group
+      width: 100%
+    & .search-field
+      width: 98%
+      margin-right: get-vw(20px)
+      border: none
+      outline: none
+      border-bottom: get-vw(1px) solid $greyDark
+      padding: get-vw(3px) get-vw(10px)
+      font-size: get-vw(15px)
+      @include mobile
+        background: $black
+        padding: get-vw-mobile(3px) get-vw-mobile(10px)
+        border-bottom: get-vw-mobile(1px) solid rgba(238, 238, 238,.6)
+        font-size: get-vw-mobile(17px)
+        color: $white
+    & .search-submit
+      outline: none
+      cursor: pointer
+      border: none
+      background: transparent
+      @include mobile
+        margin-right: get-vw-mobile(7px)
+
+@keyframes show
+  0%
+    width: 0
+    opacity: 0
+  100%
+    width: get-vw(650px)
+    opacity: 1
+
+@keyframes showMob
+  0%
+    width: 0
+    opacity: 0
+  100%
+    width: get-vw-mobile(250px)
+    opacity: 1
+
+@keyframes hide
+  0%
+    width: get-vw(650px)
+    opacity: 1
+  100%
+    width: 0
+    opacity: 0
+
+@keyframes hideMob
+  0%
+    width: get-vw-mobile(250px)
+    opacity: 1
+  100%
+    width: 0
+    opacity: 0
+
+.menu-btn
+  display: none
+  width: get-vw-mobile(24px)
+  height: get-vw-mobile(16px)
+  position: relative
+  z-index: 100
+  @include mobile
+    display: block
+  & span,&::after,&::before
+    height: get-vw-mobile(2px)
+    background: $black
+    position: absolute
+    transition: .3s ease-in-out
+  & span
+    width: 85%
+    top: 50%
+    left: 0%
+    transform: translate(0%,-50%)
+  &::after,&::before
+    content: ''
+    width: 100%
+    left: 0%
+    transform: translate(0%,-50%)
+  &::after
+    top: 0
+  &::before
+    top: 100%
+
+.show-menu
+  & .menu-wrap
+    @include mobile
+      transform: translateX(0)
+    & .header-menu .menu-item
+      @include mobile
+        opacity: 1
+        transform: translateX(0)
+    & .header-right__menu
+      @include mobile
+        transition-delay: .8s
+        opacity: 1
+        transform: translateX(0)
+  & .menu-btn
+    & span
+      opacity: 0
+      transform: translate(100%,-50%)
+      background: $white
+    &::after
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%) rotate(45deg)
+      background: $white
+    &::before
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%) rotate(-45deg)
+      background: $white

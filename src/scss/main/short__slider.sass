@@ -1,0 +1,200 @@
+.short-product
+  padding: get-vw(20px) 0 get-vw(200px)
+  background-color: $white
+  @include mobile
+    padding: unset
+    margin-top: get-vw-mobile(40px)
+  & .container
+    position: relative
+
+.short-product__text
+  width: get-vw(280px)
+  @include mobile
+    width: 100%
+
+.short-slides
+  width: get-vw(900px)
+  @include mobile
+    width: 100%
+
+.short-pagination
+  position: absolute
+  bottom: 0
+  right: 0
+  transform: translateY(150%)
+  z-index: 10
+  @include mobile
+    margin: 0 auto
+    position: relative
+
+  & .swiper-pagination-bullet
+    width: get-vw(14px)
+    height: get-vw(14px)
+    margin-left: get-vw(8px)
+    outline: none
+    position: relative
+    border: get-vw(1px) solid transparent
+    opacity: 1
+    background: transparent
+    transition: .3s ease
+    @include mobile
+      width: get-vw-mobile(14px)
+      height: get-vw-mobile(14px)
+      margin-left: get-vw-mobile(8px)
+      border-width: get-vw-mobile(1px)
+    &::after
+      content: ''
+      width: 75%
+      height: 75%
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      background-color: $black
+      border-radius: 50%
+      opacity: .6
+      transition: .3s ease
+      @include mobile
+        width: 100%
+        height: 100%
+        transform: translate(-50%,-50%) scale(.6)
+    &.swiper-pagination-bullet-active
+      border-color: $greyDark
+      &::after
+        opacity: 1
+
+.btn-text
+  font-size: get-vw(14px)
+  font-weight: 600
+  letter-spacing: get-vw(0.75px)
+  text-transform: uppercase
+  color: $black
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  width: fit-content
+  position: relative
+  @include mobile
+    font-size: get-vw-mobile(14px)
+    letter-spacing: get-vw-mobile(0.75px)
+    margin-bottom: get-vw-mobile(32px)
+  &::before
+    content: ''
+    position: absolute
+    bottom: get-vw(-3px)
+    right: 100%
+    width: get-vw(10px)
+    height: get-vw(1px)
+    background: $black
+    opacity: 0
+    transition: all .2s ease, right 0s ease .2s
+  & span
+    margin-left: get-vw(6px)
+    width: get-vw(10px)
+    display: block
+    @include mobile
+      margin-left: get-vw-mobile(6px)
+      width: get-vw-mobile(10px)
+      line-height: 1.2
+  &:hover
+    @media (hover:hover)
+      // & span
+      //   animation: linkGo .6s cubic-bezier(.5,.12,.46,.88) infinite
+      &::before
+        right: 0
+        opacity: 1
+        width: 100%
+        transition: right .2s ease, width .2s ease .2s
+
+// @keyframes linkGo
+//   0%,100%
+//     transform: translateX(0)
+//   50%
+//     transform: translateX(15%)
+
+.short-slide__img
+  display: flex
+  justify-content: center
+  & img
+    width: 90%
+
+.short-slide__body
+  position: absolute
+  top: 100%
+  width: 100%
+  height: 100%
+  background-color: rgba(237, 237, 237, .5)
+  padding: get-vw(55px) get-vw(50px)
+  transition: .4s cubic-bezier(.5,.12,.46,.88)
+  @include mobile
+    padding: get-vw-mobile(55px)
+  &::after
+    content: ''
+    width: 80%
+    height: 80%
+    pointer-events: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    border: get-vw(1px) solid $black
+    z-index: 1
+
+.short-slide
+  &:hover
+    .short-slide__body
+      top: 0
+
+.short-slide__name
+  margin-bottom: get-vw(5px)
+  @include mobile
+    margin-bottom: get-vw-mobile(5px)
+  & h2
+    font-weight: 500
+    font-size: get-vw(20px)
+    letter-spacing: get-vw(0.15px)
+    color: $black
+    @include mobile
+      font-size: get-vw-mobile(20px)
+      letter-spacing: get-vw-mobile(0.15px)
+
+.short-slide__info
+  & p
+    font-size: get-vw(14px)
+    line-height: get-vw(20px)
+    letter-spacing: get-vw(0.25px)
+    color: $greyDark
+    @include mobile
+      font-size: get-vw-mobile(14px)
+      line-height: get-vw-mobile(20px)
+      letter-spacing: get-vw-mobile(0.25px)
+
+.short-slide__price
+  margin-top: get-vw(15px)
+  @include mobile
+    margin-top: get-vw-mobile(5px)
+  span
+    color: $black
+    font-weight: 700
+    font-size: get-vw(14px)
+    @include mobile
+      font-size: get-vw-mobile(14px)
+
+.short-product__text
+  & h1
+    font-weight: 700
+    color: $black
+    font-size: get-vw(34px)
+    @include mobile
+      font-size: get-vw-mobile(34px)
+  & p
+    font-size: get-vw(16px)
+    line-height: get-vw(26px)
+    letter-spacing: get-vw(0.44px)
+    color: $greyDark
+    margin-bottom: get-vw(18px)
+    @include mobile
+      margin-bottom: get-vw-mobile(28px)
+      font-size: get-vw-mobile(16px)
+      line-height: get-vw-mobile(26px)
+      letter-spacing: get-vw-mobile(0.44px)

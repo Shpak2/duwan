@@ -1,0 +1,176 @@
+.intro-text
+  width: get-vw(420px)
+  padding: get-vw(50px) get-vw(45px)
+  transform: translateX(get-vw(102px))
+  border: get-vw(2px) solid $black
+  position: relative
+  z-index: 10
+  color: $black
+  transition: .4s ease-in-out
+  @include mobile
+    width: 90%
+    transform: unset
+    margin: get-vw-mobile(20px) auto
+    border: unset
+    padding: unset
+  &__body
+    font-family: Bunya Personal
+    text-transform: uppercase
+    text-align: center
+    font-size: get-vw(65px)
+    line-height: 1.1
+    @include mobile
+      font-size: get-vw-mobile(45px)
+      border: get-vw-mobile(1.625px) solid $black
+      margin-bottom: get-vw-mobile(30px)
+    & p
+      @include mobile
+        margin: get-vw-mobile(25px)
+  & a
+    width: get-vw(247px)
+    height: get-vw(52px)
+    margin: get-vw(30px) auto 0
+    position: relative
+    overflow: hidden
+    @include mobile
+      width: 100%
+      margin: unset
+      height: get-vw-mobile(49px)
+
+.intro-slides
+  width: get-vw(630px)
+  transform: translateX(get-vw(-50px))
+  @include mobile
+    width: 100%
+    transform: unset
+    // margin-top: get-vw-mobile(20px)
+
+.plane-normal__bg,.plane-hover__bg
+  width: 100%
+  height: 100%
+  transform-origin: 0 100%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  transition: .4s cubic-bezier(.5,.12,.46,.88)
+
+.plane-normal__bg
+  background: $black
+
+.plane-hover__bg
+  background: #FAFAFA
+  border: 1px solid transparent
+  transform: rotate(-90deg)
+
+.plane-normal,.plane-hover
+  position: absolute
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+  transform-origin: 0 100%
+  transition: .4s cubic-bezier(.5,.12,.46,.88)
+
+.plane-normal
+  color: $white
+
+.plane-hover
+  transform: rotate(-90deg) translateY(-100%)
+  color: $black
+  // text-shadow: 0 0 get-vw(1px) $black, 0 0 get-vw(1px) $black
+  & svg path
+    stroke: $black
+
+.btn-black
+  text-transform: uppercase
+  // background-color: $black
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: get-vw(14px)
+  @include mobile
+    font-size: get-vw-mobile(14px)
+  & .icon
+    display: block
+    width: get-vw(18px)
+    margin-left: get-vw(2px)
+    margin-top: get-vw(4px)
+    @include mobile
+      width: get-vw-mobile(18px)
+      margin-top: get-vw-mobile(4px)
+      margin-left: get-vw-mobile(2px)
+  &:hover
+    @media (hover:hover)
+      & .plane-normal
+        transform: translateY(100%)
+      & .plane-normal__bg
+        transform: translateY(100%)
+        transition-delay: .2s
+      & .plane-hover
+        transform: rotate(0deg)
+        font-weight: 600
+      & .plane-hover__bg
+        transform: rotate(0deg)
+        border-color: $black
+        transition-delay: .4s
+
+.intro-slide__next,.intro-slide__prev
+  position: absolute
+  bottom: 0
+  right: get-vw(116px)
+  z-index: 10
+  width: get-vw(70px)
+  height: get-vw(70px)
+  // background: red
+  border: none
+  display: flex
+  align-items: center
+  justify-content: center
+  outline: none
+  cursor: pointer
+  transition: .4s cubic-bezier(.5,.12,.46,.88)
+  opacity: 0
+  @include mobile
+    display: none
+  & svg
+    width: 70%
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-30%,-60%)
+  &:hover
+    @media (hover:hover)
+      & svg path
+        stroke: $black
+
+.intro-slide__next
+  transform: translateX(200%)
+
+.intro-slide__prev
+  transform: translateX(-100%)
+
+.intro__wrap
+  background: #FAFAFA
+  @include mobile
+    background: unset
+
+  & .container
+    position: relative
+    @include mobile
+      width: 100%
+    &:hover
+      @media (hover:hover)
+        & .intro-text
+          transform: unset
+        .intro-slide__next
+          transform: translateX(100%)
+          opacity: 1
+        .intro-slide__prev
+          transform: translateX(0%)
+          opacity: 1
+  & .intro-text
+    &:hover
+      @media (hover:hover)
+        transform: translateX(get-vw(102px)) !important

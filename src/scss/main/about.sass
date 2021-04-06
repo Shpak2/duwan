@@ -1,0 +1,79 @@
+.about
+  &__wrap
+    position: relative
+    padding-bottom: get-vw(70px)
+    @include mobile
+      display: flex
+      flex-wrap: wrap
+      width: 100%
+      margin: get-vw-mobile(60px) 0
+    & .text
+      width: get-vw(507px)
+      margin-bottom: get-vw(15px)
+      @include mobile
+        margin-bottom: get-vw-mobile(25px)
+        width: 100%
+  &__decore
+    position: absolute
+    width: get-vw(1046px)
+    height: get-vw(450px)
+    left: 0
+    top: get-vw(-60px)
+    transition: $cubic1
+    transform: translateX(-50%)
+    opacity: 0
+    @include mobile
+      position: relative
+      top: unset
+      width: 100%
+      height: auto
+  &-block
+    position: relative
+    z-index: 10
+    width: 50%
+    margin-left: auto
+    // margin-top: get-vw(60px)
+    background-color: $white
+    padding: get-vw(53px) 0 get-vw(53px) get-vw(68px)
+    box-shadow: 0px get-vw(4px) get-vw(33px) rgba(0, 0, 0, 0.04)
+    transition: $cubic1
+    transform: translateX(50%)
+    opacity: 0
+    @include mobile
+      width: 90%
+      box-shadow: unset
+      padding: unset
+      margin: 0 auto
+
+.textheader
+  & h2
+    font-size: get-vw(34px)
+    line-height: get-vw(45px)
+    letter-spacing: get-vw(0.25px)
+    margin-bottom: get-vw(5px)
+    color: $black
+    font-weight: 700
+    @include mobile
+      font-size: get-vw-mobile(34px)
+      line-height: get-vw-mobile(45px)
+      letter-spacing: get-vw-mobile(0.25px)
+      margin-bottom: get-vw-mobile(6px)
+
+.text
+  & p
+    font-size: get-vw(16px)
+    line-height: get-vw(26px)
+    letter-spacing: get-vw(0.44px)
+    @include mobile
+      font-size: get-vw-mobile(16px)
+      line-height: get-vw-mobile(26px)
+      letter-spacing: get-vw-mobile(0.44px)
+    &:not(:last-child)
+      margin-bottom: get-vw(20px)
+      @include mobile
+        margin-bottom: get-vw-mobile(10px)
+
+.about__wrap.active
+  & .about-block, & .about__decore
+    transform: unset
+    opacity: 1

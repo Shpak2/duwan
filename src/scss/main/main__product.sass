@@ -1,0 +1,149 @@
+.product
+  &-link
+    position: absolute
+  &-info
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &-name
+    font-size: get-vw(17px)
+    line-height: get-vw(30px)
+    letter-spacing: get-vw(0.15px)
+    color: $black
+    font-weight: 600
+    width: 80%
+    margin-right: auto
+    display: inline-block
+    @include mobile
+      font-size: get-vw-mobile(17px)
+      line-height: get-vw-mobile(30px)
+      letter-spacing: get-vw-mobile(0.15px)
+  &-price
+    font-weight: 700
+    font-size: get-vw(14px)
+    letter-spacing: get-vw(0.75px)
+    line-height: get-vw(30px)
+    color: #999999
+    text-align: end
+    @include mobile
+      font-size: get-vw-mobile(14px)
+      letter-spacing: get-vw-mobile(0.75px)
+      line-height: get-vw-mobile(30px)
+  &-review
+    width: 100%
+    position: relative
+    overflow: hidden
+    margin-bottom: get-vw(20px)
+    background: #F5F5F5
+    box-shadow: 0px get-vw(7px) get-vw(17px) rgba(0, 0, 0, 0.05)
+    &__img
+      width: 100%
+      & img
+        margin: get-vw(4px) auto
+        width: 90%
+        display: block
+  &-item
+    width: calc( 91% / 4)
+    display: inline-block
+    margin-bottom: get-vw(30px)
+    &:not(:nth-child(4n+4))
+      margin-right: calc( 7.5% / 3)
+      @include mobile
+        margin-right: unset
+
+.products-wrap
+  & .textheader
+    margin-bottom: get-vw(40px)
+    @include mobile
+      margin-bottom: get-vw-mobile(30px)
+
+.product
+  &-review
+    display: block
+    &::before, &::after
+      content: ''
+      width: 0
+      height: get-vw(1px)
+      position: absolute
+      transition: all .2s linear
+      background: $black
+    &::before
+      right: 0
+      top: 0
+    &::after
+      left: 0
+      bottom: 0
+    &__img
+      &::before, &::after
+        content: ""
+        width: get-vw(1px)
+        height: 0
+        position: absolute
+        transition: all .2s linear
+        transition-delay: 0s
+        background: $black
+        transition-delay: 0s
+      &::before
+        left: 0
+        top: 0
+      &::after
+        right: 0
+        bottom: 0
+  &-item
+    &:hover
+      @media (hover:hover)
+        & .product-review
+          &::before,&::after
+            transition-delay: 0s
+            width: 100%
+          &__img
+            &::before,&::after
+              transition-delay: 0s
+              height: 100%
+
+.more-btn
+  position: relative
+  width: get-vw(200px)
+  height: get-vw(50px)
+  margin: get-vw(85px) auto
+  cursor: pointer
+  letter-spacing: get-vw(0.75px)
+  overflow: hidden
+  @include mobile
+    width: 100%
+    height: get-vw-mobile(50px)
+    margin: get-vw-mobile(25px) auto
+  & .plane-normal__bg
+    background: $white
+    border: get-vw(1px) solid $black
+    border-radius: get-vw(2px)
+  & .plane-normal
+    color: $black
+    font-weight: 600
+  & .plane-hover__bg
+    background: $black
+    border-radius: get-vw(2px)
+  & .plane-hover
+    color: $white
+    font-weight: 600
+    & svg circle
+      fill: $white
+  & .icon
+    width: get-vw(10px)
+    @include mobile
+      width: get-vw-mobile(10px)
+    & svg
+      transform: translate(0%,50%) scale(5)
+  &:hover
+    @media (hover:hover)
+      & .plane-normal
+        transform: translateY(100%)
+      & .plane-normal__bg
+        transform: translateY(100%)
+        transition-delay: unset
+      & .plane-hover
+        transform: rotate(0deg)
+      & .plane-hover__bg
+        transform: rotate(0deg)
+        border-color: $black
+        transition-delay: unset

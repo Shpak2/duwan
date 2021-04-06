@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HTML Template</title>
+
+    <!-- <link rel="preload" href="./src/css/preload.css" as="style" /> -->
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="./css/style.css?ver=1.0.1" />
+
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container d-flex">
+        <div class="menu-btn">
+          <span></span>
+        </div>
+        <div class="header-logo">
+          <a href="/">
+            <img src="./img/logo.svg" alt="home">
+          </a>
+        </div>
+        <div class="menu-wrap">
+          <nav class="header-menu__wrapper">
+            <ul class="header-menu">
+              <li class="menu-item">
+                <a href="#" aria-current="page">
+                  <span>Strona główna</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" aria-current="page">
+                  <span>O nas</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" aria-current="page">
+                  <span>Kolekcja</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" aria-current="page">
+                  <span>Stwórz dywan</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header-right__menu">
+            <ul>
+              <li>
+                <div id="search">
+                  <span>
+                    <img class="img-svg" src="./img/icon/search.svg" alt="search">
+                  </span>
+                  <div class="dropdown-search">
+                    <form role="search" method="get" class="search-form" action="search">
+                      <div class="form-group">
+                        <label>
+                          <input type="search" class="search-field form-control" placeholder="Search" value="" name="s" title="Search for:">
+                        </label>
+                      </div>
+                      <button type="submit" class="search-submit theme_button color1">
+                        <span><img class="img-svg" src="./img/icon/search.svg" alt="search"></span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="btn-cart">
+                  <span>
+                    <img class="img-svg" src="./img/icon/cart.svg" alt="search">
+                  </span>
+                  <i>2</i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="intro__wrap">
+        <div class="container d-flex">
+          <div class="intro-text">
+            <div class="intro-text__body">
+              <p>Rajskie nowości w&nbsp;kolekcji dywanów</p>
+            </div>
+            <a href="#" class="btn-black btn-plane">
+              <span class="plane-normal">
+                <span>Zobacz kolekcje</span>
+                <span class="icon">
+                  <img class="img-svg" src="./img/icon/double-arrow.svg" alt="icon">
+                </span>
+              </span>
+              <span class="plane-normal__bg"></span>
+              <span class="plane-hover">
+                <span>Zobacz kolekcje</span>
+                <span class="icon">
+                  <img class="img-svg" src="./img/icon/double-arrow.svg" alt="icon">
+                </span>
+              </span>
+              <span class="plane-hover__bg"></span>
+            </a>
+          </div>
+          <div class="intro-slides swiper-container">
+            <div class="intro-slides__wrap swiper-wrapper">
+              <div class="intro-slide swiper-slide">
+                <div class="intro-slide__body">
+                  <img src="./img/temp/1.jpg" alt="slide">
+                </div>
+              </div>
+              <div class="intro-slide swiper-slide">
+                <div class="intro-slide__body">
+                  <img src="./img/temp/2.jpg" alt="slide">
+                </div>
+              </div>
+              <div class="intro-slide swiper-slide">
+                <div class="intro-slide__body">
+                  <img src="./img/temp/3.jpg" alt="slide">
+                </div>
+              </div>
+              <div class="intro-slide swiper-slide">
+                <div class="intro-slide__body">
+                  <img src="./img/temp/4.jpg" alt="slide">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="intro-slide__next">
+            <img class="img-svg" src="./img/icon/arrowr.svg" alt="icon">
+          </div>
+          <div class="intro-slide__prev">
+            <img class="img-svg" src="./img/icon/arrowl.svg" alt="icon">
+          </div>
+        </div>
+      </section>
+      <section class="short-product">
+        <div class="container d-flex">
+          <div class="short-product__text">
+            <h1>Rajskie dywany</h1>
+            <p>Zobacz pełną ofertę designów na każdy gust i zakochaj się</p>
+            <a href="#" class="btn-text">
+              Zobacz kolekcje
+              <span>
+                <img class="img-svg" src="./img/icon/arrow.svg" alt="icon">
+              </span>
+            </a>
+          </div>
+          <div class="short-slides swiper-container">
+            <div class="short-slides__wrap swiper-wrapper">
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>101zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>102zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>103zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>104zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>105zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>106zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>107zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>108zl</span>
+                  </div>
+                </div>
+              </div>
+              <div class="short-slide swiper-slide">
+                <div class="short-slide__img">
+                  <img src="./img/temp/1.png" alt="img">
+                </div>
+                <div class="short-slide__body">
+                  <div class="short-slide__name">
+                    <h2>Product name</h2>
+                  </div>
+                  <div class="short-slide__info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, odio debitis quod quia</p>
+                  </div>
+                  <div class="short-slide__price">
+                    <span>109zl</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="short-pagination"></div>
+        </div>
+      </section>
+      <section class="about__wrap">
+          <div class="about-block">
+            <div class="textheader">
+              <h2>O nas</h2>
+            </div>
+            <div class="text">
+              <p>Rajskie dywany to custom’owe dywany z oryginalnym designem, które powstały z miłości 
+                do trendów i sztuki. Przeznaczone są dla osób doceniających ekskluzywność, kreatywność i piękno.</p>
+              <p>Rajskie dywany są oryginalnym i niepowtarzalnym rozwiązaniem w branży dywanowej - czas zapomnieć o 
+                nudnych kolorach i trywialnym prostokątnym kształcie!</p>
+              <p>Każdy Rajski dywan jest wykonany ręcznie w technologii tuftingu, z dbałością o szczegóły, w tym o 
+                idealną kolorystykę i dopasowanie odcieni.</p>
+            </div>
+            <a href="#" class="btn-text">
+              Poznaj więcej
+              <span>
+                <img class="img-svg" src="./img/icon/arrow.svg" alt="icon">
+              </span>
+            </a>
+        </div>
+        <div class="about__decore">
+          <img class="only-desktop" src="./img/temp/bg.jpg" alt="bg">
+          <img class="only-mobile" src="./img/temp/bg-mob.jpg" alt="bg">
+        </div>
+      </section>
+      <section class="products-wrap">
+        <div class="container">
+          <div class="textheader">
+            <h2>Rajskie hity dywanowe</h2>
+          </div>
+          <div class="product-slides swiper-container">
+            <div class="products-block swiper-wrapper">
+              <div class="product-item swiper-slide">
+                <a href="#" class="product-review">
+                  <div class="product-review__img">
+                    <img src="./img/temp/1.png" alt="product">
+                  </div>
+                </a>
+                <div class="product-info">
+                  <span class="product-name">Product name</span>
+                  <span class="product-price">70zl</span>
+                </div>
+              </div>
+              <div class="product-item swiper-slide">
+                <a href="#" class="product-review">
+                  <div class="product-review__img">
+                    <img src="./img/temp/1.png" alt="product">
+                  </div>
+                </a>
+                <div class="product-info">
+                  <span class="product-name">Product name</span>
+                  <span class="product-price">70zl</span>
+                </div>
+              </div>
+              <div class="product-item swiper-slide">
+                <a href="#" class="product-review">
+                  <div class="product-review__img">
+                    <img src="./img/temp/1.png" alt="product">
+                  </div>
+                </a>
+                <div class="product-info">
+                  <span class="product-name">Product name</span>
+                  <span class="product-price">70zl</span>
+                </div>
+              </div>
+              <div class="product-item swiper-slide">
+                <a href="#" class="product-review">
+                  <div class="product-review__img">
+                    <img src="./img/temp/1.png" alt="product">
+                  </div>
+                </a>
+                <div class="product-info">
+                  <span class="product-name">Product name</span>
+                  <span class="product-price">70zl</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="more-btn btn-plane">
+            <div class="plane-normal">
+              <span>Pokaż więcej</span>
+              <span class="icon">
+                <img class="img-svg" src="./img/icon/more.svg" alt="icon">
+              </span>
+            </div>
+            <div class="plane-normal__bg"></div>
+            <div class="plane-hover">
+              <span>Pokaż więcej</span>
+              <span class="icon">
+                <img class="img-svg" src="./img/icon/more.svg" alt="icon">
+              </span>
+            </div>
+            <div class="plane-hover__bg"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container d-flex">
+        <div class="footer-logo">
+          <a href="/">
+            <img src="./img/logo.svg" alt="home">
+          </a>
+        </div>
+        <nav class="footer-menu__wrapper">
+          <ul class="footer-menu">
+            <li class="menu-item">
+              <a href="#" aria-current="page">
+                <span>Kontakt</span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" aria-current="page">
+                <span>Dostawa</span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" aria-current="page">
+                <span>O nas</span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" aria-current="page">
+                <span>Zwroty</span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" aria-current="page">
+                <span>Regulamin</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="./js/libs.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
